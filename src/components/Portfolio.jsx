@@ -42,6 +42,11 @@ const Portfolio = () => {
   return (
     <div className="filter_gallery">
       <div className="category-buttons">
+        <div className="category_title">
+          <h3>Our Portfolio</h3>
+          <h2>Some recent work</h2>
+        </div>
+        <div className="option_btn">
         {Object.keys(categories).map((category) => (
           <button
             key={category}
@@ -51,6 +56,7 @@ const Portfolio = () => {
             {category}
           </button>
         ))}
+        </div>
       </div>
       {selectedCategory !== "All" &&
         categories[selectedCategory].length > 0 && (
