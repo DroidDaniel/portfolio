@@ -1,0 +1,24 @@
+[
+    { "id": 1, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/billbord.jpg" },
+    { "id": 2, "category": "Branding", "subcategory": "Brochure", "image": "/images/All/Branding/brochure.jpg" },
+    { "id": 3, "category": "Branding", "subcategory": "Business card", "image": "/images/All/Branding/businesscard.jpg" },
+    { "id": 4, "category": "Branding", "subcategory": "Envelope", "image": "/images/All/Branding/envelope.jpg" },
+    { "id": 5, "category": "Branding", "subcategory": "Letter head", "image": "/images/All/Branding/letterhead.jpg" },
+    { "id": 6, "category": "Branding", "subcategory": "Logo", "image": "/images/All/Branding/logo.jpg" },
+    { "id": 7, "category": "Branding", "subcategory": "Logo animation", "image": "/images/All/Branding/logoanimation.jpg" },
+    { "id": 8, "category": "Branding", "subcategory": "Package design", "image": "/images/All/Branding/packagedesign.jpg" },
+    { "id": 9, "category": "Branding", "subcategory": "Posters", "image": "/images/All/Branding/posters.jpg" },
+    { "id": 10, "category": "Commercial ads", "subcategory": "Commercial ads", "image": "/images/All/Commercialads/Commercialads.jpg" },
+    { "id": 11, "category": "Design", "subcategory": "Design", "image": "/images/All/Design/design.jpg" },
+    { "id": 12, "category": "Social Media", "subcategory": "Posters", "image": "/images/All/Socialmedia/socialmediaposter.jpg" },
+    { "id": 13, "category": "Social Media", "subcategory": "Reels", "image": "/images/All/Socialmedia/socialmediareels.jpg" },
+    { "id": 14, "category": "Video", "subcategory": "2D animation", "image": "/images/All/Video/2danimation.jpg", "videoUrl": "https://www.youtube.com/embed/LqyzghWk-SE?si=kGo_HvnLN40kQjgo" },
+    { "id": 15, "category": "Video", "subcategory": "3D animation", "image": "/images/All/Video/3danimation.jpg", "videoUrl": "https://www.youtube.com/embed/BTbKyia-zUA?si=cZcLOhIoAh0IGESs" },
+    { "id": 16, "category": "Video", "subcategory": "Lyrical Videos", "image": "/images/All/Video/lyricalvideos.jpg", "videoUrl": "https://www.youtube.com/embed/KkiQP56fLU8?si=kKI9UxHFdD4sT07v" },
+    { "id": 17, "category": "Video", "subcategory": "Motion graphics", "image": "/images/All/Video/motiongraphics.jpg", "videoUrl": "https://www.youtube.com/embed/D54rwYXApWk?si=tCtx4pSPDeiyYD8w" },
+    { "id": 18, "category": "Video", "subcategory": "Product animation", "image": "/images/All/Video/productanimation.jpg", "videoUrl": "https://www.youtube.com/embed/tIn-H9K2HQM?si=T-cheAuiPU_Zmg8s" },
+    { "id": 19, "category": "Video", "subcategory": "Title animation", "image": "/images/All/Video/titleanimation.jpg", "videoUrl": "https://www.youtube.com/embed/aJIZDl8unD0?si=nPIgHjbKDh0awyYX" },
+    { "id": 20, "category": "Video", "subcategory": "VFX", "image": "/images/All/Video/vfx.jpg", "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_7" },
+    { "id": 21, "category": "Web", "subcategory": "Web", "image": "/images/All/Web/website.jpg" }
+  ]
+  
