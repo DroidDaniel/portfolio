@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Portfolio.css";
 import galleryItemsData from "./galleryItems.json";
 import categoriesData from "./categories.json";
@@ -47,35 +49,39 @@ const Portfolio = () => {
           <h2>Some recent work</h2>
         </div>
         <div className="option_btn">
-        {Object.keys(categories).map((category) => (
-          <button
-            key={category}
-            className={`button ${selectedCategory === category ? "active" : ""}`}
-            onClick={() => handleCategoryChange(category)}
-          >
-            {category}
-          </button>
-        ))}
+          {Object.keys(categories).map((category) => (
+            <button
+              key={category}
+              className={`button ${selectedCategory === category ? "active" : ""}`}
+              onClick={() => handleCategoryChange(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </div>
-      {selectedCategory !== "All" &&
-        categories[selectedCategory].length > 0 && (
-          <div className="subcategory-buttons">
-            {categories[selectedCategory].map((subcategory) => (
-              <button
-                key={subcategory}
-                className={`button ${selectedSubcategory === subcategory ? "active" : ""}`}
-                onClick={() => handleSubcategoryChange(subcategory)}
-              >
-                {subcategory}
-              </button>
-            ))}
-          </div>
-        )}
+      {selectedCategory !== "All" && categories[selectedCategory].length > 0 && (
+        <div className="subcategory-buttons">
+          {categories[selectedCategory].map((subcategory) => (
+            <button
+              key={subcategory}
+              className={`button ${selectedSubcategory === subcategory ? "active" : ""}`}
+              onClick={() => handleSubcategoryChange(subcategory)}
+            >
+              {subcategory}
+            </button>
+          ))}
+        </div>
+      )}
       <div className="gallery">
         {filteredItems.map((item) => (
           <div key={item.id} className="gallery-item">
-            <img src={item.image} alt={item.subcategory} className="gallery-image" />
+            <LazyLoadImage
+              src={item.image}
+              alt={item.subcategory}
+              className="gallery-image"
+              effect="blur"
+            />
             {item.category === "Video" && (
               <button className="play-button" onClick={() => handleVideoPlay(item.videoUrl)}>
                 ▶
