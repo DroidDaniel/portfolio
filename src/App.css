@@ -7,9 +7,3 @@ body,html{
   overflow-x: hidden;
   background-color: #181818;
 }
-
-.arrowscope_common_continer{
-  max-width: 1320px;
-  width: 100%;
-  margin: 0 auto;
-}

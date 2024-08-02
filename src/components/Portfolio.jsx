@@ -5,6 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Portfolio.css";
 import galleryItemsData from "./galleryItems.json";
 import categoriesData from "./categories.json";
+import closeImg from "../assets/icons/close.png" 
 
 Modal.setAppElement("#root");
 
@@ -15,6 +16,7 @@ const Portfolio = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState("");
+  const [subcategoryModalIsOpen, setSubcategoryModalIsOpen] = useState(false);
 
   useEffect(() => {
     setGalleryItems(galleryItemsData);
@@ -24,10 +26,14 @@ const Portfolio = () => {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setSelectedSubcategory("");
+    if (category !== "All" && categories[category].length > 0) {
+      setSubcategoryModalIsOpen(true);
+    }
   };
 
   const handleSubcategoryChange = (subcategory) => {
     setSelectedSubcategory(subcategory);
+    setSubcategoryModalIsOpen(false);
   };
 
   const handleVideoPlay = (videoUrl) => {
@@ -60,19 +66,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      {selectedCategory !== "All" && categories[selectedCategory].length > 0 && (
-        <div className="subcategory-buttons">
-          {categories[selectedCategory].map((subcategory) => (
-            <button
-              key={subcategory}
-              className={`button ${selectedSubcategory === subcategory ? "active" : ""}`}
-              onClick={() => handleSubcategoryChange(subcategory)}
-            >
-              {subcategory}
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="gallery_grid">
       <div className="gallery">
         {filteredItems.map((item) => (
           <div key={item.id} className="gallery-item">
@@ -90,6 +84,7 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+      </div>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
@@ -97,7 +92,9 @@ const Portfolio = () => {
         className="video-modal"
         overlayClassName="video-overlay"
       >
-        <button className="close-button" onClick={() => setModalIsOpen(false)}>X</button>
+        <button className="close-button" onClick={() => setModalIsOpen(false)}>
+          <img src={closeImg} alt="close"/>
+        </button>
         <div className="video-container">
           <iframe
             width="560"
@@ -108,6 +105,28 @@ const Portfolio = () => {
             allowFullScreen
             title="YouTube video player"
           ></iframe>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={subcategoryModalIsOpen}
+        onRequestClose={() => setSubcategoryModalIsOpen(false)}
+        contentLabel="Subcategory Modal"
+        className="subcategory-modal"
+        overlayClassName="subcategory-overlay"
+      >
+        <button className="close-button" onClick={() => setSubcategoryModalIsOpen(false)}>
+        <img src={closeImg} alt="close"/>
+          </button>
+        <div className="subcategory-container">
+          {categories[selectedCategory]?.map((subcategory) => (
+            <button
+              key={subcategory}
+              className={`button ${selectedSubcategory === subcategory ? "active" : ""}`}
+              onClick={() => handleSubcategoryChange(subcategory)}
+            >
+              {subcategory}
+            </button>
+          ))}
         </div>
       </Modal>
     </div>
