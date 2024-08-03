@@ -5,7 +5,8 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Portfolio.css";
 import galleryItemsData from "./galleryItems.json";
 import categoriesData from "./categories.json";
-import closeImg from "../assets/icons/close.png" 
+import closeImg from "../assets/icons/close.png";
+import fallbackImg from "../assets/logo.png";
 
 Modal.setAppElement("#root");
 
@@ -67,23 +68,27 @@ const Portfolio = () => {
         </div>
       </div>
       <div className="gallery_grid">
-      <div className="gallery">
-        {filteredItems.map((item) => (
-          <div key={item.id} className="gallery-item">
-            <LazyLoadImage
-              src={item.image}
-              alt={item.subcategory}
-              className="gallery-image"
-              effect="blur"
-            />
-            {item.category === "Video" && (
-              <button className="play-button" onClick={() => handleVideoPlay(item.videoUrl)}>
-                ▶
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
+        <div className="gallery">
+          {filteredItems.map((item) => (
+            <div key={item.id} className="gallery-item">
+              <LazyLoadImage
+                src={item.image}
+                alt={item.subcategory}
+                className="gallery-image"
+                effect="blur"
+                onError={(e) => {
+                  e.target.onerror = null; // Prevent looping
+                  e.target.src = fallbackImg;
+                }}
+              />
+              {item.category === "Video" && (
+                <button className="play-button" onClick={() => handleVideoPlay(item.videoUrl)}>
+                  ▶
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -93,7 +98,7 @@ const Portfolio = () => {
         overlayClassName="video-overlay"
       >
         <button className="close-button" onClick={() => setModalIsOpen(false)}>
-          <img src={closeImg} alt="close"/>
+          <img src={closeImg} alt="close" />
         </button>
         <div className="video-container">
           <iframe
@@ -115,8 +120,8 @@ const Portfolio = () => {
         overlayClassName="subcategory-overlay"
       >
         <button className="close-button" onClick={() => setSubcategoryModalIsOpen(false)}>
-        <img src={closeImg} alt="close"/>
-          </button>
+          <img src={closeImg} alt="close" />
+        </button>
         <div className="subcategory-container">
           {categories[selectedCategory]?.map((subcategory) => (
             <button
