@@ -1,5 +1,5 @@
 [
-    { "id": 1, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/billbord.jpg" },
+    { "id": 1, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/demo4.png" },
     { "id": 2, "category": "Branding", "subcategory": "Brochure", "image": "/images/All/Branding/brochure.jpg" },
     { "id": 3, "category": "Branding", "subcategory": "Business card", "image": "/images/All/Branding/businesscard.jpg" },
     { "id": 4, "category": "Branding", "subcategory": "Envelope", "image": "/images/All/Branding/envelope.jpg" },
@@ -19,6 +19,10 @@
     { "id": 18, "category": "Video", "subcategory": "Product animation", "image": "/images/All/Video/productanimation.jpg", "videoUrl": "https://www.youtube.com/embed/tIn-H9K2HQM?si=T-cheAuiPU_Zmg8s" },
     { "id": 19, "category": "Video", "subcategory": "Title animation", "image": "/images/All/Video/titleanimation.jpg", "videoUrl": "https://www.youtube.com/embed/aJIZDl8unD0?si=nPIgHjbKDh0awyYX" },
     { "id": 20, "category": "Video", "subcategory": "VFX", "image": "/images/All/Video/vfx.jpg", "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_7" },
-    { "id": 21, "category": "Web", "subcategory": "Web", "image": "/images/All/Web/website.jpg" }
+    { "id": 21, "category": "Web", "subcategory": "Web", "image": "/images/All/Web/website.jpg" },
+    { "id": 22, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/demo1.png" },
+    { "id": 23, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/demo2.png" },
+    { "id": 24, "category": "Branding", "subcategory": "Bill Boards", "image": "/images/All/Branding/demo3.png" }
+
   ]
   
